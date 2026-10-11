@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* Antarik design tokens — "ink on paper" with a single saffron accent.
+   Deliberately light and editorial, to stand apart from the dark-neon look most AI sites use. */
+@theme {
+  --color-paper: #f7f4ec;
+  --color-paper-2: #efeadd;
+  --color-ink: #13233a;
+  --color-ink-2: #3c4a5e;
+  --color-ink-3: #6b7685;
+  --color-line: #ddd6c6;
+  --color-kesar: #e07a2e;
+  --color-kesar-dark: #b85f1d;
+  --color-leaf: #2f7d5b;
+  --color-alert: #b3392f;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-kesar) 30%, transparent);
+}
