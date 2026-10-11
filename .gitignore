@@ -21,6 +21,10 @@ dist/
 Thumbs.db
 .idea/
 
+# Claude Code: personal overrides and hook scratch data
+.claude/settings.local.json
+.claude/state/
+
 # Local data
 *.db
 *.sqlite

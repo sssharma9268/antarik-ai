@@ -18,6 +18,13 @@ Product summary, architecture and roadmap live in `docs/`. Read `docs/ARCHITECTU
 - Frontend: `cd frontend && npm run dev` · `npm run build` (runs `tsc --noEmit` first)
 - Infra: `docker compose up -d` (Postgres on 5432)
 
+## Worklog and Claude Code setup
+- Daily log: `.claude/worklog/YYYY-MM-DD.md`. After finishing a meaningful piece of work, add an entry under
+  `## Entries` (or run `/log`): done (with commit hashes), decisions, blockers, next. Never edit the
+  `## Auto log` lines; a SessionEnd hook writes those.
+- Commands: `/log`, `/standup`, `/check`, `/dev`. Agent: `rules-reviewer` (run before committing backend
+  changes to gateway, metering, models, auth or keys). Details in `.claude/README.md`.
+
 ## Non-negotiable rules
 1. **Never store prompt or completion text.** Not in UsageRecord, AuditLog, logs, or exceptions.
    `tests/test_api.py` has a canary test that scans every table — keep it passing and extend it to new tables.
